@@ -11,30 +11,10 @@ import java.util.Scanner;
 public class EmployeeApp {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
-        Employee employee1 = new Manager(201,"Lokesh",87000,"Delhi",7);
+        EmployeeRegistering.registerEmployee();
 
-
-
-        Employee employee2 = new Developer(501,"Karan",76000,"Bangalore","Java");
-
-        EmployeeOperations employeeOperations = new EmployeeOperationImpl();
-
-        employeeOperations.addEmployee(employee1);
-        employeeOperations.addEmployee(employee2);
-
-        employeeOperations.printAllEmployees();
-
-//        System.out.println("Enter the id : ");
-//        int id = scan.nextInt();
-//
-//
-//        Employee emp = employeeOperations.getEmployee(id);
-//
-//        emp.printDetails();
-
-
+        EmployeeFetching.fetchEmployee();
 
     }
 

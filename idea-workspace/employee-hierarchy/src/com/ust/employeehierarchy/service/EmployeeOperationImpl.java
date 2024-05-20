@@ -7,7 +7,20 @@ import java.util.List;
 
 public class EmployeeOperationImpl implements  EmployeeOperations{
 
-    List<Employee> employees = new ArrayList<>();
+    List<Employee> employees;
+
+    private static EmployeeOperationImpl employeeOperation;
+
+    public static EmployeeOperationImpl getInstance(){
+        if (employeeOperation == null) {
+            employeeOperation = new EmployeeOperationImpl();
+        }
+        return employeeOperation;
+    }
+
+    private EmployeeOperationImpl(){
+        employees = new ArrayList<>();
+    }
 
     @Override
     public void addEmployee(Employee employee) {
