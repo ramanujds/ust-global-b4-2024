@@ -2,6 +2,7 @@ package defaultandstatic;
 
 import java.util.List;
 
+@FunctionalInterface
 interface Printable{
     void print();
     default void scan(){
@@ -14,10 +15,13 @@ interface Printable{
 }
 
 class Printer implements Printable{
+
     public void print() {
         System.out.println("Hello World");
     }
 
+
+    @Override
     public void scan() {
         System.out.println("Scanning..");
     }
