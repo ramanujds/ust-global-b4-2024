@@ -6,9 +6,15 @@ public class DownloaderWithLambda {
 
     static void download(){
             for (int i=0; i<=100; i+=5){
-                System.out.println("From "+Thread.currentThread().getName()+" downloaded "+i+"%");
+                synchronized (DownloaderWithLambda.class) {
+                    System.out.print("From " + Thread.currentThread().getName());
+                    System.out.print(" : Downloaded " + i + "%");
+                    System.out.println(" of the file");
+                }
+
+
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(500);
                 }
                 catch (InterruptedException ex){
                     System.err.println(ex.getMessage());
@@ -25,6 +31,9 @@ public class DownloaderWithLambda {
 
         downloader1.start();
         downloader2.start();
+
     }
 
 }
+
+
