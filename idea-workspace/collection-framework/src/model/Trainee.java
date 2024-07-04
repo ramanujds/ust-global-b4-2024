@@ -63,8 +63,12 @@ public class Trainee implements Comparable<Trainee> {
         return result;
     }
 
-    @Override
     public int compareTo(Trainee trainee) {
-        return this.location.compareTo(trainee.location);
+        int locCom = this.location.compareTo(trainee.location);
+        if (locCom != 0) {
+            return locCom;
+        } else {
+            return this.id-trainee.id;
+        }
     }
 }
