@@ -3,10 +3,34 @@ package model;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-public class Trainee extends Object {
+public class Trainee implements Comparable<Trainee> {
     private int id;
     private String name;
     private String location;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public Trainee(int id, String name, String location) {
         this.id = id;
@@ -37,5 +61,10 @@ public class Trainee extends Object {
         result = 31 * result + Objects.hashCode(name);
         result = 31 * result + Objects.hashCode(location);
         return result;
+    }
+
+    @Override
+    public int compareTo(Trainee trainee) {
+        return this.location.compareTo(trainee.location);
     }
 }
