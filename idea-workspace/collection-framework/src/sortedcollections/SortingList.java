@@ -29,7 +29,12 @@ public class SortingList {
         System.out.println("Before sorting : ");
         trainees.forEach(t-> System.out.println(t));
 
-        Collections.sort(trainees);
+        Collections.sort(trainees,(tr1,tr2)->tr1.getName().compareTo(tr2.getName()));
+
+        System.out.println("After sorting : ");
+        trainees.forEach(t-> System.out.println(t));
+
+        Collections.sort(trainees,(tr1,tr2)->tr1.getId()-tr2.getId());
 
         System.out.println("After sorting : ");
         trainees.forEach(t-> System.out.println(t));
