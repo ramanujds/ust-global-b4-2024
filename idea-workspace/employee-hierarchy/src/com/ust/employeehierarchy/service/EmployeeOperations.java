@@ -10,4 +10,6 @@ public interface EmployeeOperations {
 
     void printAllEmployees();
 
+    Employee getEmployeeByName(String name);
+
 }

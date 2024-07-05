@@ -29,11 +29,16 @@ public class EmployeeOperationImpl implements  EmployeeOperations{
 
     @Override
     public Employee getEmployee(int id) {
-        return employees.stream().filter(e->e.getId()==id).findFirst().get();
+        return employees.stream().filter(e->e.getId()==id).findFirst().orElse(null);
     }
 
     @Override
     public void printAllEmployees() {
         employees.forEach(Employee::printDetails);
+    }
+
+    @Override
+    public Employee getEmployeeByName(String name) {
+        return employees.parallelStream().filter(e->e.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
 }
