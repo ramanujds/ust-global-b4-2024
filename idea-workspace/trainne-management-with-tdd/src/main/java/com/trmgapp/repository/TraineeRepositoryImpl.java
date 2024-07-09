@@ -19,9 +19,8 @@ public class TraineeRepositoryImpl implements TraineeRepository {
 
     @Override
     public Trainee save(Trainee trainee) {
-//        trainees.add(trainee);
-//        return trainee;
-        return null;
+        trainees.add(trainee);
+        return trainee;
     }
 
     @Override
