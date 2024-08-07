@@ -3,7 +3,7 @@ package model;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-public class Trainee{
+public class Trainee implements Comparable<Trainee>{
     private int id;
     private String name;
     private String location;
@@ -63,12 +63,12 @@ public class Trainee{
         return result;
     }
 
-//    public int compareTo(Trainee trainee) {
-//        int locCom = this.location.compareTo(trainee.location);
-//        if (locCom != 0) {
-//            return locCom;
-//        } else {
-//            return this.id-trainee.id;
-//        }
-//    }
+    public int compareTo(Trainee trainee) {
+        int locCom = this.location.compareTo(trainee.location);
+        if (locCom != 0) {
+            return locCom;
+        } else {
+            return this.id-trainee.id;
+        }
+    }
 }
