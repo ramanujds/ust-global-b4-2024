@@ -12,6 +12,10 @@ public class Sim {
     @Value("${sim.network}")
     private String network; // 4G/5G etc
 
+    public  Sim(){
+        System.out.println("Sim bean Created");
+    }
+
     public void call(){
         System.out.println("Making a call");
     }

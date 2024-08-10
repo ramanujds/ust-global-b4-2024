@@ -14,14 +14,26 @@ public class App
 
         ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Phone phone = appContext.getBean("iPhone",Phone.class);
+//        Phone iPhone15ProMax = appContext.getBean("iPhone",Phone.class);
+//
+//        iPhone15ProMax.setPrice(129000);
+//
+//        iPhone15ProMax.printDetails();
+//
+//        Phone iPhone15 = appContext.getBean("iPhone",Phone.class);
 
-        phone.printDetails();
+        // iPhone15.printDetails();
+
+
+
+
 
 //        iPhone15.call();
 //        iPhone15.sendText();
 
 //        Scanner scan = appContext.getBean(Scanner.class);
+
+
 
     }
 }

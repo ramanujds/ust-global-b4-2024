@@ -3,10 +3,14 @@ package com.ust.springapp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 @Component("iPhone")
+//@Scope("prototype")
+@Lazy
 public class Phone {
 
     @Autowired
@@ -22,6 +26,10 @@ public class Phone {
     private String model;
     @Value("${phone.price}")
     private float price;
+
+    public Phone(){
+        System.out.println("Phone bean created");
+    }
 
     public void setMysim(Sim mysim) {
         this.mysim = mysim;
