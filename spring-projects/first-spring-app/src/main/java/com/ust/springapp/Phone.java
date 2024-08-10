@@ -57,6 +57,7 @@ public class Phone {
         System.out.println("Brand : "+brand);
         System.out.println("Model : "+model);
         System.out.println("Price : "+price);
+        mysim.printDetails();
 
     }
 

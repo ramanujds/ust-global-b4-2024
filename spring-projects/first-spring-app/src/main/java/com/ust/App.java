@@ -14,7 +14,7 @@ public class App
 
         ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Phone phone = appContext.getBean("samsung",Phone.class);
+        Phone phone = appContext.getBean("iPhone",Phone.class);
 
         phone.printDetails();
 
