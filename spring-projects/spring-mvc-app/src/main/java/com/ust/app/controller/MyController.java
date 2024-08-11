@@ -3,6 +3,7 @@ package com.ust.app.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.IOException;
@@ -27,9 +28,10 @@ public class MyController {
     }
 
     @GetMapping("/info")
-    public String showInfo(){
-        System.out.println("I am Ramanuj");
-        return "index.html";
+    public String showInfo(Model m){
+        String message = "Hello, I am Ramanuj";
+        m.addAttribute("message",message);
+        return "show-info.jsp";
     }
 
 }
