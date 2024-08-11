@@ -35,6 +35,7 @@ public class TraineeController {
     @GetMapping("/find-trainee")
     public String getTrainee(@RequestParam("id") int id, Model m){
         Trainee trainee = traineeRepo.getTraineeById(id);
+        // Trainee with id : x not found
         m.addAttribute("trainee",trainee);
         return "show-info.jsp";
     }

@@ -21,7 +21,8 @@ public class TraineeRepository {
     }
 
     public Trainee getTraineeById(int id){
-       return trainees.stream().filter(t->t.getId()==id).findFirst().get();
+       return trainees.stream().filter(t->t.getId()==id).findFirst()
+               .orElse(null);
     }
 
     public List<Trainee> getAll(){
