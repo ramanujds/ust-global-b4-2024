@@ -1,5 +1,6 @@
 package com.ust.app.controller;
 
+import com.ust.app.model.Trainee;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
@@ -29,8 +30,8 @@ public class MyController {
 
     @GetMapping("/info")
     public String showInfo(Model m){
-        String message = "Hello, I am Ramanuj";
-        m.addAttribute("message",message);
+        Trainee trainee = new Trainee(1,"Suhas","Bangalore");
+        m.addAttribute("trainee",trainee);
         return "show-info.jsp";
     }
 
