@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TraineeController {
@@ -27,17 +28,22 @@ public class TraineeController {
 //    }
 
     @PostMapping("/add-trainee")
-    public String addTrainee(@ModelAttribute("trainee") Trainee trainee){
+    public ModelAndView addTrainee(@ModelAttribute Trainee trainee){
         traineeRepo.addTrainee(trainee);
-        return "show-info.jsp";
+        ModelAndView mv= new ModelAndView("show-info");
+        mv.addObject("trainee",trainee);
+        return mv;
     }
 
     @GetMapping("/find-trainee")
     public String getTrainee(@RequestParam("id") int id, Model m){
         Trainee trainee = traineeRepo.getTraineeById(id);
-        // Trainee with id : x not found
+        if(trainee==null){
+            m.addAttribute("msg","Trainee with id : "+id+" Not Found!!");
+            return "show-error";
+        }
         m.addAttribute("trainee",trainee);
-        return "show-info.jsp";
+        return "show-info";
     }
 
 }
