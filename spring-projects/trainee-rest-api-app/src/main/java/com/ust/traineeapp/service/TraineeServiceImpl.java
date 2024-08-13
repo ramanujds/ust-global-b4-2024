@@ -1,6 +1,7 @@
 package com.ust.traineeapp.service;
 
 import com.ust.traineeapp.model.Trainee;
+import com.ust.traineeapp.repository.TraineeJPARepository;
 import com.ust.traineeapp.repository.TraineeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,25 +11,25 @@ import java.util.List;
 public class TraineeServiceImpl implements TraineeService{
 
     @Autowired
-    private TraineeRepository traineeRepo;
+    private TraineeJPARepository traineeRepo;
 
     public Trainee addTrainee(Trainee trainee) {
-        return traineeRepo.addTrainee(trainee);
+        return traineeRepo.save(trainee);
     }
 
     public Trainee updateTrainee(Trainee trainee) {
-        return traineeRepo.updateTrainee(trainee);
+        return traineeRepo.save(trainee);
     }
 
     public void deleteTrainee(int id) {
-        traineeRepo.deleteTrainee(id);
+        traineeRepo.deleteById(id);
     }
 
     public Trainee getTrainee(int id) {
-        return traineeRepo.getTrainee(id);
+        return traineeRepo.findById(id).orElse(null);
     }
 
     public List<Trainee> getAllTrainees() {
-        return traineeRepo.getAllTrainees();
+        return traineeRepo.findAll();
     }
 }
