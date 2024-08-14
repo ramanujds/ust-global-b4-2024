@@ -2,27 +2,24 @@ package com.ust.traineeapp.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Trainee {
+public class Laptop {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    @Column(name = "trainee_name", nullable = false, length = 50)
-    private String name;
-
     @Column(length = 50)
-    private String location;
+    private String brand;
+    @Column(length = 50)
+    private String model;
+    private double price;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Laptop> laptops;
 
 }

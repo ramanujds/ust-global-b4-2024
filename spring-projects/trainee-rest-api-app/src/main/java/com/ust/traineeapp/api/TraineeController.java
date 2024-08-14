@@ -45,5 +45,16 @@ public class TraineeController {
        return traineeService.updateTrainee(trainee);
    }
 
+    @GetMapping("/name/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public Trainee getTraineeByName(@PathVariable("name") String name){
+        return traineeService.getTraineeByName(name);
+    }
+
+    @GetMapping("/location/{location}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Trainee> getTraineesByLocation(@PathVariable("location") String location) {
+        return traineeService.getTraineesByLocation(location);
+    }
 
 }
