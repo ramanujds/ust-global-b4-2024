@@ -8,15 +8,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "trainee_record")
+@Entity(name = "trainee")
 public class Trainee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "trainee_name", nullable = false, length = 100)
+    @Column(name = "trainee_name", nullable = false, length = 50)
     private String name;
 
+    @Column(length = 50)
     private String location;
 
 }
