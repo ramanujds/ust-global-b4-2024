@@ -1,0 +1,59 @@
+Mongo DB
+
+- NoSQL based
+- Document Based
+- Object Oriented
+- Schema-less
+- Non Relational
+- Scalable
+- Javascript based query language
+- uses BSON (Binary JSON)
+
+Default Port for MongoDB: 27017
+
+Installation and Configuration
+
+Install MongoDB
+Create the following folders
+C:data/db
+C:data/log
+Add Mongo DB to path
+
+MySQL - Database -> Tables -> Rows
+
+MongoDB - Database -> Collections -> Documents
+
+_id is a default field 
+
+
+db.createUser(
+    {
+        user: "ramanuj",
+        pwd: "password",
+        roles: [
+            {
+                role: "readWrite",
+                db: "trainee_db"
+            }
+        ]
+    }
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
