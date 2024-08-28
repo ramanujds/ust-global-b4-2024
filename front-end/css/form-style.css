@@ -1,0 +1,41 @@
+.form-container{
+    max-width: 400px;
+    margin: 50px 20px;
+    padding: 20px;
+    position: relative;
+    left: 100px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid lightslategray;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button{
+    
+    padding: 10px;
+    
+    color: aliceblue;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]{
+    background-color: rgb(5, 94, 123);
+}
+
+button[type="reset"]{
+    background-color: rgb(209, 203, 24);
+}

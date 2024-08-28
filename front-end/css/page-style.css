@@ -1,0 +1,44 @@
+.container{
+  display: flex;
+  margin-top: 20px;
+}
+
+header{
+    background-color: cornflowerblue;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+footer{
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+section{
+    background-color: cadetblue;
+    padding: 15px;
+    width: 100%;
+}
