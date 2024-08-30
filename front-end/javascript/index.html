@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="hello.js"></script>
+</head>
+<body>
+
+    <input type="text" id="username">
+    
+    <button onclick="addUser()">Add User</button>
+    <button onclick="fetchUsers()">Fetch Users</button>
+
+    <br>
+
+    List of Users
+    <ul id="userlist">
+      
+    </ul>
+
+
+</body>
+
+<script>
+    let users=[];
+    function addUser(){
+        let userinput = document.getElementById("username");
+        users.push(userinput.value)
+        userinput.value="";
+        fetchUsers()
+    }
+
+    function fetchUsers(){
+        let userlist = document.getElementById("userlist");
+        let list = "";
+        users.forEach(u => list += `<li>${u}</li>`);
+        userlist.innerHTML=list;
+    }
+
+</script>
+
+</html>
